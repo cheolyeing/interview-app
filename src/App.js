@@ -9,17 +9,17 @@ class App extends React.Component {
     people: [
       {
         id: 0,
-        name: 임희철,
+        name: "임희철",
         attendance: false,
       },
       {
         id: 1,
-        name: 서성준,
+        name: "서성준",
         attendance: false,
       },
       {
         id: 2,
-        name: Nicolas,
+        name: "Nicolas",
         attendance: false,
       },
     ],
