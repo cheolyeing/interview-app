@@ -57,6 +57,12 @@ class App extends React.Component {
         });
     };
 
+    handleAddPeople = (data) => {
+        this.setState(({ people }) => ({
+            people: [...people, data],
+        }));
+    };
+
     render() {
         const {
             clicked1,
@@ -71,7 +77,10 @@ class App extends React.Component {
                 {!clicked1 ? (
                     // Page #1
                     <section>
-                        <AddPeople></AddPeople>
+                        <AddPeople
+                            onCreate={this.handleAddPeople}
+                            nextId={people.length}
+                        />
                         <h1>출석 체크</h1>
                         {people.map((current) => (
                             <label>
