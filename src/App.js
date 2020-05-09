@@ -57,23 +57,18 @@ class App extends React.Component {
   };
 
   render() {
-    const {
-      clicked1,
-      clicked2,
-      people_num,
-      problem_num,
-      people_name,
-    } = this.state;
+    const { clicked1, clicked2, people_num, problem_num, people } = this.state;
 
     return (
       <section className="container">
         {!clicked1 ? (
+          // Page #1
           <section>
             <h1>출석 체크</h1>
-            {people_name.map((current) => (
+            {people.map((current) => (
               <label>
                 <input type="checkbox"></input>
-                {current}
+                {current.name}
                 <br />
               </label>
             ))}
@@ -85,8 +80,15 @@ class App extends React.Component {
             <button onClick={this.setClicked1}></button>
           </section>
         ) : (
+          // Page #2, 3
           <section>
-            {!clicked2 ? <div>false</div> : <div>true</div>}
+            {!clicked2 ? (
+              // Page #2
+              <div>false</div>
+            ) : (
+              // Page #3
+              <div>true</div>
+            )}
             <h1>인원 수 : {people_num}명</h1>
             <h1>문제 수 : {problem_num}문제</h1>
             <button onClick={this.setClicked2}></button>
