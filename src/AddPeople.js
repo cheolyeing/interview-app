@@ -4,7 +4,7 @@ class AddPeople extends React.Component {
     state = {
         people: {
             id: 0,
-            name: "이름 추가",
+            name: "",
             problem: [],
             attendance: false,
         },
@@ -22,7 +22,7 @@ class AddPeople extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.onCreate(this.state.people);
-        this.setState({ people: { name: "이름 추가" } });
+        this.setState({ people: { name: "" } });
     };
 
     render() {
