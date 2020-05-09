@@ -6,7 +6,23 @@ class App extends React.Component {
     clicked2: false,
     people_num: 0,
     problem_num: 0,
-    people_name: ["권현이", "기연주", "김규빈", "임희철"],
+    people: [
+      {
+        id: 0,
+        name: 임희철,
+        attendance: false,
+      },
+      {
+        id: 1,
+        name: 서성준,
+        attendance: false,
+      },
+      {
+        id: 2,
+        name: Nicolas,
+        attendance: false,
+      },
+    ],
   };
 
   setPeopleNum = (e) => {
@@ -18,6 +34,13 @@ class App extends React.Component {
   setProblemNum = (e) => {
     this.setState({
       problem_num: e.target.value,
+    });
+  };
+
+  setAddPeople = () => {
+    const { people } = this.state;
+    this.setState({
+      people: people.concat({ id: this.id++ }),
     });
   };
 
