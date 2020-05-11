@@ -1,4 +1,5 @@
 import React from "react";
+import Emoji from "./Emoji";
 
 class AddPeople extends React.Component {
     state = {
@@ -9,7 +10,7 @@ class AddPeople extends React.Component {
             attendance: false,
         },
     };
-    pushName = (e) => {
+    handleChange = (e) => {
         this.setState({
             people: {
                 id: this.props.nextId,
@@ -27,16 +28,22 @@ class AddPeople extends React.Component {
 
     render() {
         return (
-            <div class="add_name">
-                <form class="add_name_form" onSubmit={this.handleSubmit}>
+            <div className="add_name">
+                <form className="add_name_form" onSubmit={this.handleSubmit}>
+                    <h1>
+                        <Emoji symbol="🙋🏻‍♂" />
+                        이름추가하기
+                    </h1>
                     <input
-                        placeholder="이름추가하기"
+                        type="text"
+                        placeholder="홍길동"
                         value={this.state.people.name}
-                        onChange={this.pushName}
+                        onChange={this.handleChange}
                         name="name"
                     />
+                    <br />
+                    <input type="submit" value="추가하기✅" />
                 </form>
-                <div>{this.state.people.name}</div>
             </div>
         );
     }
