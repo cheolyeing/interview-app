@@ -7,4 +7,5 @@
 
 ### Todo
 
+-   [x] : Emoji Component 만들기
 -   [ ] : 문제 분배 알고리즘 만들기
